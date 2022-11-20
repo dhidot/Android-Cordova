@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 //Insert New Data
     $("#insert").click(function () {
-        var geudung = $("#gedung").val();
+        var gedung = $("#gedung").val();
         var noruangan = $("#noruangan").val();
         var kapasitas = $("#kapasitas").val();
         console.log(gedung + "" + noruangan + "" + kapasitas);
@@ -43,7 +43,7 @@ $(document).ready(function () {
                 var len = results.rows.length, i;
                 $("#rowCount").html(len);
                 for (i = 0; i < len; i++) {
-                    $("#TableData").append("<tr><td>" + results.rows.item(i).id + "</td><td>" + results.rows.item(i).gedung + "</td><td>" + results.rows.item(i).noruangan + results.rows.item(i).kapasitas + "</td><td><a href='edit.html?id=" + results.rows.item(i).id + "&gedung=" + results.rows.item(i).gedung + "&noruangan=" + results.rows.item(i).noruangan + "&kapasitas=" + results.rows.item(i).kapasitas + "'>Edit</a> &nbsp;&nbsp; <a class='delete' href='#' id='" + results.rows.item(i).id + "'>Delete</a></td></tr>");
+                    $("#TableData").append("<tr><td>" + results.rows.item(i).id + "</td><td>" + results.rows.item(i).gedung + "</td><td>" + results.rows.item(i).noruangan + "</td><td>" + results.rows.item(i).kapasitas + "</td><td><a href='edit.html?id=" + results.rows.item(i).id + "&gedung=" + results.rows.item(i).gedung + "&noruangan=" + results.rows.item(i).noruangan + "&kapasitas=" + results.rows.item(i).kapasitas + "'>Edit</a> &nbsp;&nbsp; <a class='delete' href='#' id='" + results.rows.item(i).id + "'>Delete</a></td></tr>");
                 }
             }, null);
         });
@@ -65,19 +65,20 @@ $(document).ready(function () {
     });
 
 
-//Delete Tables
+//Update Table Data
     $("#update").click(function () {
         var id = $("#id").text();
-        var title = $("#title").val();
-        var desc = $("#desc").val()
+        var gedung = $("#gedung").val();
+        var noruangan = $("#noruangan").val()
+        var kapasitas = $("#kapasitas").val();
         myDB.transaction(function (transaction) {
             var executeQuery = "UPDATE phonegap_pro SET gedung=?, noruangan=?, kapasitas=? WHERE id=?";
-            transaction.executeSql(executeQuery, [title, desc, id], //On Success
+            transaction.executeSql(executeQuery, [gedung, noruangan, kapasitas, id], //On Success
                 function (tx, result) {
-                    alert('Berhasil menghapus data');
+                    alert('Berhasil mengubah data');
                 }, //On Error
                 function (error) {
-                    alert('Gagal menghapus data');
+                    alert('Gagal mengubah data');
                 });
         });
     });
