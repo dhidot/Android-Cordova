@@ -3,7 +3,8 @@
 # Pre Requisites
 
 1. Installing nodejs
-2. Installing cordova
+2. Installing Gradle 
+3. Installing cordova
 
 
 # Installing cordova
