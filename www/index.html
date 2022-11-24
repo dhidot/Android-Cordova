@@ -1,15 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manajemen Gedung</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+    <title>SQLite</title>
+    <!--    <link rel="stylesheet" type="text/css" href="css/ionic.css">-->
+
+    <!--  Boootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous">
+
+</head>
 </head>
 <body>
-<div class="container">
-    <button class="btn btn-info"><a href="/pages/manage.html" style="text-decoration : none;">Manage Ruangan</a></button>
+<div class="container-xxl bar bar-header bar-dark">
+    <h1 class="title" style="text-align: center">CRUD Cordova menggunakan plugins sqlite</h1>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<div class="container-xxl" style="padding:10px;margin-top:60px;">
+    <button id="createTable" class="btn btn-primary" style="display: flex; margin: auto;">Create Table</button>
+    <div class="list" style="margin: 30px 0; display: grid;">
+        <label class="item item-input item-stacked-label" style="margin: 6px 0;">
+            <span class="input-label" style="margin-right:42px; width: 100% ">Gedung</span>
+            <input type="text" id="gedung" placeholder="Nama Gedung" style="padding-left: 6px; border-radius: 6px">
+        </label>
+        <label class="item item-input item-stacked-label" style="margin: 6px 0;">
+            <span class="input-label" style="margin-right:10px;">No Ruangan</span>
+            <input type="text" id="noruangan" placeholder="No Ruangan" style="padding-left: 6px; border-radius: 6px">
+        </label>
+        <label class="item item-input item-stacked-label" style="margin: 6px 0;">
+            <span class="input-label" style="margin-right:33px;">Kapasitas</span>
+            <input type="text" id="kapasitas" placeholder="Kapasitas Ruangan" style="padding-left: 6px; border-radius: 6px">
+        </label>
+        <button id="insert" class="btn btn-secondary" style="margin-top: 15px;width: 170px">Masukkan Data</button>
+    </div>
+    <p id="status"></p>
+    <button id="showTable" class="btn btn-primary">Show Table</button>
+     <p id=""></p>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Gedung</th>
+        <th>No Ruangan</th>
+        <th>Kapasitas</th>
+        <th>Action</th>
+        </thead>
+        <tbody id="TableData">
+
+        </tbody>
+    </table>
+
+    <button id="DropTable" class="btn btn-primary" style="display: flex; margin: auto;">Drop Table</button>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<!-- Bootstrao JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 </html>

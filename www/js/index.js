@@ -43,7 +43,7 @@ $(document).ready(function () {
                 var len = results.rows.length, i;
                 $("#rowCount").html(len);
                 for (i = 0; i < len; i++) {
-                    $("#TableData").append("<tr><td>" + results.rows.item(i).id + "</td><td>" + results.rows.item(i).gedung + "</td><td>" + results.rows.item(i).noruangan + "</td><td>" + results.rows.item(i).kapasitas + "</td><td><a href='edit.html?id=" + results.rows.item(i).id + "&gedung=" + results.rows.item(i).gedung + "&noruangan=" + results.rows.item(i).noruangan + "&kapasitas=" + results.rows.item(i).kapasitas + "'>Edit</a> &nbsp;&nbsp; <a class='delete' href='#' id='" + results.rows.item(i).id + "'>Delete</a></td></tr>");
+                    $("#TableData").append("<tr><td>" + results.rows.item(i).id + "</td><td>" + results.rows.item(i).gedung + "</td><td>" + results.rows.item(i).noruangan + "</td><td>" + results.rows.item(i).kapasitas + "</td><td><a href='edit.html?id=" + results.rows.item(i).id + "&gedung=" + results.rows.item(i).gedung + "&noruangan=" + results.rows.item(i).noruangan + "&kapasitas=" + results.rows.item(i).kapasitas + "'></a> &nbsp;&nbsp; <a class='delete' href='#' id='" + results.rows.item(i).id + "'>Delete</a></td></tr>");
                 }
             }, null);
         });
